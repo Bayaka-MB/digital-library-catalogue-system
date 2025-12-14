@@ -206,6 +206,17 @@ th {
 /* Responsive */
 
 @media (max-width: 800px) {
+    th,
+  td {
+    font-size: 0.8rem;
+    padding: 0.45rem 0.3rem;
+  }
+
+  .btn.btn-sm {
+    font-size: 0.7rem;
+    padding: 0.25rem 0.45rem;
+  }
+
   main {
     padding: 1rem;
   }
@@ -247,4 +258,19 @@ th {
   gap: 10px;
   margin: 14px 0;
   flex-wrap: wrap;
+}
+
+.table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+table {
+  min-width: 720px;
+}
+
+th,
+td {
+  white-space: nowrap;
 }
