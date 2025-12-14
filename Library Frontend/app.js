@@ -1,5 +1,5 @@
 // Change this when you deploy backend to Render
-const API_BASE = "http://localhost:3003";
+const API_BASE = "https://digital-library-backend-v4wo.onrender.com";
 
 // Elements
 const authSection = document.getElementById("auth-section");
