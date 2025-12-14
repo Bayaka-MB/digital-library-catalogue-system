@@ -157,6 +157,27 @@ http://localhost:3003
 * Database queries verified using pgAdmin 4
 
 ---
+## 🌍 Live Deployment Links
+
+- **Frontend (GitHub Pages):**  
+  👉 https://bayaka-mb.github.io/digital-library-catalogue-system/
+
+- **Backend API (Render):**  
+  👉 https://digital-library-backend-v4wo.onrender.com
+
+---
+
+## 🔐 Test Login Credentials
+
+### Student Account
+- Email: `student@test.com`
+- Password: `password123`
+
+### Librarian Account
+- Email: `librarian@test.com`
+- Password: `password123`
+
+---
 
 ## 📚 References
 
