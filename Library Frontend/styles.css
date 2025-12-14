@@ -274,7 +274,7 @@ th,
 td {
   white-space: nowrap;
 }
-/* ---- Mobile: turn tables into vertical cards ---- */
+
 @media (max-width: 800px) {
   table, thead, tbody, th, td, tr {
     display: block;
@@ -282,7 +282,7 @@ td {
   }
 
   thead {
-    display: none; /* hide the header row on mobile */
+    display: none;
   }
 
   tr {
@@ -313,7 +313,7 @@ td {
     min-width: 110px;
   }
 
-  /* Make action buttons wrap nicely */
+
   td[data-label="Actions"], td[data-label="Action"] {
     flex-wrap: wrap;
     justify-content: flex-start;
