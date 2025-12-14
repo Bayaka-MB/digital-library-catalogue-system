@@ -1,0 +1,21 @@
+{
+  "name": "digital-library-backend",
+  "version": "1.0.0",
+  "description": "Backend API for a Digital Library Catalogue System using PostgreSQL",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "author": "Bayaka Braimah",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^17.2.3",
+    "express": "^4.19.2",
+    "pg": "^8.16.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11"
+  }
+}
