@@ -169,19 +169,20 @@ function renderBorrowTable(records) {
 
     const tr = document.createElement("tr");
     tr.innerHTML = `
-      <td>${r.title || ""}</td>
-      <td>${borrowDate ? borrowDate.toLocaleDateString() : ""}</td>
-      <td>${dueDate ? dueDate.toLocaleDateString() : ""}</td>
-      <td>${daysBorrowed}</td>
-      <td>${isOverdue ? "Overdue" : (r.status || "")}</td>
-      <td>
-        ${
-          r.status === "borrowed"
-            ? `<button class="btn primary btn-sm return-btn" data-borrow-id="${r.id}">Return</button>`
-            : `<span class="muted-text">—</span>`
-        }
-      </td>
-    `;
+  <td data-label="Title">${r.title || ""}</td>
+  <td data-label="Borrowed">${borrowDate ? borrowDate.toLocaleDateString() : ""}</td>
+  <td data-label="Due">${dueDate ? dueDate.toLocaleDateString() : ""}</td>
+  <td data-label="Days">${daysBorrowed}</td>
+  <td data-label="Status">${isOverdue ? "Overdue" : (r.status || "")}</td>
+  <td data-label="Action">
+    ${
+      r.status === "borrowed"
+        ? `<button class="btn primary btn-sm return-btn" data-borrow-id="${r.id}">Return</button>`
+        : `<span class="muted-text">—</span>`
+    }
+  </td>
+`;
+
 
     borrowsTableBody.appendChild(tr);
   });
@@ -382,24 +383,25 @@ function renderBooksTable() {
     const tr = document.createElement("tr");
 
     tr.innerHTML = `
-      <td>${book.title || ""}</td>
-      <td>${book.author || ""}</td>
-      <td>${book.category || ""}</td>
-      <td>${book.year_published || ""}</td>
-      <td>${book.available_copies ?? ""}</td>
-      <td>
-        ${
-          isLibrarian
-            ? `<button class="btn secondary btn-sm edit-btn" data-id="${book.id}">Edit</button>
-               <button class="btn primary btn-sm delete-btn" data-id="${book.id}">Delete</button>`
-            : isStudent
-              ? (book.available_copies > 0
-                  ? `<button class="btn primary btn-sm borrow-btn" data-id="${book.id}">Borrow</button>`
-                  : `<span class="muted-text">Unavailable</span>`)
-              : `<span class="muted-text">Read-only</span>`
-        }
-      </td>
-    `;
+  <td data-label="Title">${book.title || ""}</td>
+  <td data-label="Author">${book.author || ""}</td>
+  <td data-label="Category">${book.category || ""}</td>
+  <td data-label="Year">${book.year_published || ""}</td>
+  <td data-label="Available">${book.available_copies ?? ""}</td>
+  <td data-label="Actions">
+    ${
+      isLibrarian
+        ? `<button class="btn secondary btn-sm edit-btn" data-id="${book.id}">Edit</button>
+           <button class="btn primary btn-sm delete-btn" data-id="${book.id}">Delete</button>`
+        : isStudent
+          ? (book.available_copies > 0
+              ? `<button class="btn primary btn-sm borrow-btn" data-id="${book.id}">Borrow</button>`
+              : `<span class="muted-text">Unavailable</span>`)
+          : `<span class="muted-text">Read-only</span>`
+    }
+  </td>
+`;
+
 
     booksTableBody.appendChild(tr);
   });
