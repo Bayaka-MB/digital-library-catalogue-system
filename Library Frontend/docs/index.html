@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Digital Library Catalogue</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="top-bar">
+    <h1>Digital Library Catalogue</h1>
+
+    <nav id="nav-links" class="hidden">
+      <span id="welcome-user"></span>
+      <button id="logout-btn" class="btn secondary" type="button">Logout</button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Auth Section -->
+    <section id="auth-section">
+      <div class="card auth-card">
+        <!-- LOGIN PAGE -->
+        <form id="login-form" class="form">
+          <h2>Login</h2>
+
+          <label>
+            Email or Username
+            <input type="text" id="login-identity" required />
+          </label>
+
+          <label>
+            Password
+            <input type="password" id="login-password" required />
+          </label>
+
+          <button type="submit" class="btn primary full">Login</button>
+
+          <p class="form-note">Use the same credentials you register with.</p>
+          <p id="login-error" class="error-text"></p>
+
+          <p class="switch-text">
+            Don't have an account?
+            <a href="#" id="show-register-link">Create one</a>
+          </p>
+        </form>
+
+        <!-- REGISTER PAGE -->
+        <form id="register-form" class="form hidden">
+          <h2>Create Account</h2>
+
+          <label>
+            Username
+            <input type="text" id="reg-username" required />
+          </label>
+
+          <label>
+            Email
+            <input type="email" id="reg-email" required />
+          </label>
+
+          <label>
+            Password
+            <input type="password" id="reg-password" required />
+          </label>
+
+          <label>
+            Register As
+            <select id="reg-role" required>
+              <option value="student">Student</option>
+              <option value="librarian">Librarian</option>
+            </select>
+          </label>
+
+          <label>
+            Contact (optional)
+            <input type="text" id="reg-contact" />
+          </label>
+
+          <button type="submit" class="btn primary full">Create Account</button>
+
+          <p id="register-error" class="error-text"></p>
+          <p id="register-success" class="success-text"></p>
+
+          <p class="switch-text">
+            Already have an account?
+            <a href="#" id="show-login-link">Login</a>
+          </p>
+        </form>
+      </div>
+    </section>
+
+    <!-- Library Section -->
+<section id="library-section" class="hidden">
+
+  <!-- Library Tabs -->
+  <div class="tabs">
+    <button id="tab-catalogue" class="btn secondary" type="button">Catalogue</button>
+    <button id="tab-my-borrows" class="btn secondary" type="button">My Borrowed Books</button>
+  </div>
+
+  <!-- My Borrowed Books Section -->
+  <div id="my-borrows-section" class="card hidden">
+    <div class="card-header">
+      <h2>My Borrowed Books</h2>
+      <button id="refresh-borrows-btn" class="btn secondary btn-sm" type="button">Refresh</button>
+    </div>
+
+    <div id="borrows-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Borrowed</th>
+            <th>Due</th>
+            <th>Days</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="borrows-table-body"></tbody>
+      </table>
+
+      <p id="borrows-empty" class="muted-text"></p>
+    </div>
+  </div>
+
+  <div class="layout">
+    <!-- Left: Book List -->
+    <div class="card">
+      <div class="card-header">
+        <h2>Books Catalogue</h2>
+        <input
+          type="text"
+          id="search-input"
+          placeholder="Search by title, author, ISBN..."
+        />
+      </div>
+
+      <div id="books-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Author</th>
+              <th>Category</th>
+              <th>Year</th>
+              <th>Available</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="books-table-body"></tbody>
+        </table>
+
+        <p id="books-empty" class="muted-text"></p>
+      </div>
+    </div>
+
+    <!-- Right: Add Book Form -->
+    <div class="card">
+      <h2 id="book-form-title">Add New Book</h2>
+
+      <form id="add-book-form" class="form">
+        <label>
+          Title
+          <input type="text" id="book-title" required />
+        </label>
+
+        <label>
+          Author
+          <input type="text" id="book-author" required />
+        </label>
+
+        <label>
+          ISBN (optional)
+          <input type="text" id="book-isbn" />
+        </label>
+
+        <label>
+          Category (optional)
+          <input type="text" id="book-category" />
+        </label>
+
+        <label>
+          Year Published (optional)
+          <input type="number" id="book-year" />
+        </label>
+
+        <label>
+          Total Copies
+          <input type="number" id="book-total" value="1" min="1" />
+        </label>
+
+        <button type="submit" class="btn primary full">Save Book</button>
+
+        <button
+          type="button"
+          id="cancel-edit-btn"
+          class="btn secondary full hidden"
+        >
+          Cancel Edit
+        </button>
+
+        <p id="add-book-error" class="error-text"></p>
+        <p id="add-book-success" class="success-text"></p>
+      </form>
+    </div>
+  </div>
+</section>
+  </main>
+
+  <footer class="footer">
+    <small>Digital Library Catalogue System &copy; 2025</small>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

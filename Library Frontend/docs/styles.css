@@ -1,0 +1,250 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #f3f4f6;
+  color: #111827;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.top-bar {
+  background: #111827;
+  color: white;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.top-bar h1 {
+  font-size: 1.25rem;
+}
+
+nav span {
+  margin-right: 0.75rem;
+  font-size: 0.9rem;
+}
+
+main {
+  flex: 1;
+  padding: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.footer {
+  text-align: center;
+  padding: 0.75rem;
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+/* Cards & layout */
+
+.card {
+  background: white;
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  margin-bottom: 1rem;
+}
+
+.auth-card {
+  max-width: 420px;
+  width: 100%;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 2fr 1.3fr;
+  gap: 1.25rem;
+  width: 100%;
+  max-width: 1100px;
+}
+
+.card-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.card-header h2 {
+  font-size: 1.2rem;
+}
+
+#search-input {
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  border: 1px solid #d1d5db;
+}
+
+/* Forms */
+
+.form {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+
+label {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9rem;
+  gap: 0.25rem;
+}
+
+input {
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  border: 1px solid #d1d5db;
+}
+
+input:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.2);
+}
+
+/* Buttons */
+
+.btn {
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.55rem 0.9rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.btn.primary {
+  background: #2563eb;
+  color: white;
+}
+
+.btn.primary:hover {
+  background: #1d4ed8;
+}
+
+.btn.secondary {
+  background: #374151;
+  color: white;
+}
+
+.btn.secondary:hover {
+  background: #111827;
+}
+
+.btn.full {
+  width: 100%;
+  margin-top: 0.25rem;
+}
+
+
+/* Table */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+thead {
+  background: #e5e7eb;
+}
+
+th,
+td {
+  padding: 0.5rem 0.35rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+th {
+  text-align: left;
+}
+
+/* Text helpers */
+
+.error-text {
+  color: #b91c1c;
+  font-size: 0.8rem;
+  min-height: 1rem;
+}
+
+.success-text {
+  color: #15803d;
+  font-size: 0.8rem;
+  min-height: 1rem;
+}
+
+.muted-text {
+  color: #6b7280;
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
+/* Utility */
+
+.hidden {
+  display: none !important;
+}
+
+.form-note {
+  font-size: 0.78rem;
+  color: #6b7280;
+  margin-top: 0.25rem;
+}
+
+/* Responsive */
+
+@media (max-width: 800px) {
+  main {
+    padding: 1rem;
+  }
+
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .top-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}
+.btn-sm {
+  padding: 0.3rem 0.6rem;
+  font-size: 0.75rem;
+  margin-right: 0.25rem;
+}
+.switch-text {
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+  color: #4b5563;
+  text-align: center;
+}
+
+.switch-text a {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.switch-text a:hover {
+  text-decoration: underline;
+}
+
+.tabs {
+  display: flex;
+  gap: 10px;
+  margin: 14px 0;
+  flex-wrap: wrap;
+}
